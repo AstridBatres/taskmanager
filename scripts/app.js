@@ -63,15 +63,48 @@ function saveTask() {
   displayTask(task);
 }
 
-function getStatusText(status) {}
+function getStatusText(status) {
+  switch (status) {
+    case "1":
+      return "Pending";
+    case "2":
+      return "InProgress";
+    case "3":
+      return "Paused";
+    case "4":
+      return "Completed";
+    case "5":
+      return "Abandoned";
+
+    default:
+      return "Other";
+  }
+}
 
 function getFrequencyText(val) {
   switch (val) {
+    case "0":
+      return "One Time";
+    case "1":
+      return "Daily";
+    case "2":
+      return "Weekly";
+    default:
+      return "";
   }
 }
 
 function displayTask(task) {
-  let syntax = `<div class="task-item" style="border: 1px solid ${task.color};">
+  let iconClass = iconImportant;
+  if (task.important) {
+    iconClass = iconImportant;
+  }
+
+  let syntax = `<div class="task-item" style="border: 1px solid ${
+    task.color
+  };"> <div class="icon">
+  <i class="${iconClass}"></i>
+  </div>
   <h5>${task.title}</h5>
   <p>${task.description}</p>
   </div>
@@ -87,7 +120,7 @@ function displayTask(task) {
 
   <div class="info-4">
   <label>${getStatusText(task.status)}</label>
-  <label>${task.frequency}</label>
+  <label>${getFrequencyText(task.frequency)}</label>
   </div>
   `;
 
