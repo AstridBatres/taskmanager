@@ -1,4 +1,4 @@
-class task {
+class Task {
   constructor(
     important,
     title,
@@ -19,5 +19,7 @@ class task {
     this.color = color;
     this.frequency = frequency;
     this.status = status;
+
+    this.name = "Astrid";
   }
 }

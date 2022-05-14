@@ -3,14 +3,14 @@
 }
 
 h2 {
-  color: blue;
+  color: rgb(22, 44, 67);
   text-align: center;
   text-transform: uppercase;
   background-color: teal;
 }
 
 .main {
-  background-image: url("/img/watercolor.jpeg");
+  background-image: url("/img/Blue.jpeg");
   display: flex;
   background-repeat: no-repeat;
   background-size: cover;
@@ -55,8 +55,22 @@ h2 {
   background-color: teal;
   font: bold;
 }
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
 .btnhide {
   border-radius: 50%;
   background-color: teal;
   font: bold;
+  justify-content: flex-start;
+}
+.btndel {
+  border-radius: 50%;
+  background-color: teal;
+  font: bold;
+  justify-content: flex-end;
+}
+.task-item {
+  border: solid black 1px;
 }
